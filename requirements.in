@@ -25,5 +25,7 @@ black
 sourcery
 isort
 
-pip-tools
-pyobjc  # macOS needs it for --speak
+pyobjc==9.1  # macOS needs it for --speak
+
+httpx==0.24.0
+pip-tools==6.13.0
