@@ -25,4 +25,5 @@ black
 sourcery
 isort
 
+pip-tools
 pyobjc  # macOS needs it for --speak
