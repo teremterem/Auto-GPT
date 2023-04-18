@@ -3,7 +3,7 @@ from typing import Any
 
 import httpx
 
-_swipy_platform_base_url = "http://localhost:8000"
+_swipy_platform_url = "http://localhost:8000"
 
 _client = httpx.Client()
 
@@ -20,7 +20,7 @@ def log_text_completion_request(
         payload["_swipy_args"] = args
 
     response = _client.post(
-        f"{_swipy_platform_base_url}/text_completion_request/",
+        f"{_swipy_platform_url}/text_completion_request/",
         json=payload,
     )
     return response.json()["text_completion_id"]
@@ -31,6 +31,6 @@ def log_text_completion_response(
 ) -> None:
     """Log a text completion response to Swipy Platform."""
     _client.post(
-        f"{_swipy_platform_base_url}/text_completion_response/{text_completion_id}/",
+        f"{_swipy_platform_url}/text_completion_response/{text_completion_id}/",
         json=response,
     )
